@@ -12,23 +12,16 @@ describe Board do
 
   describe "hit" do
 
-    context "when a ship is hit" do
-      it "should receive a hit until one is hit" do
+    context "when goven coordinates matches ship" do
+
+      it "sends a hit to ship" do
         first_ship = double :ship, hit: false, position: [3, 6]
         subject.place first_ship
         subject.place ship
         expect(subject.hit(1, 1)).to eq true
       end
 
-      it "calls #shotrecorder when a ship is hit" do
-
-      end
     end
-
-  describe "#shotrecorder" do
-
-  end
-
 
   end
 end
