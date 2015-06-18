@@ -1,3 +1,5 @@
+require 'ship'
+
 describe Ship do
 
 	subject { Ship.new 1,2 }
