@@ -1,7 +1,7 @@
 require 'user'
 
 describe User do
-	
+
 	let( :board ) { double :board, :place => true }
 	subject { User.new board }
 
@@ -23,13 +23,12 @@ describe User do
 
 	end
 
-	describe "#place_ships" do 
+	describe "#place_ships" do
 
-		it "sends the ship to the board" do 
+		it "sends the ship to the board" do
 			expect( board ).to receive :place
 			subject.place double :ship
 		end
 
 	end
-
 end

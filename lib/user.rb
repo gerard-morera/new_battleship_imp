@@ -12,7 +12,11 @@ class User
 	end
 
 	def place ship
-
+    board.place ship
 	end
+
+  private
+
+	attr_reader :board
 
 end
