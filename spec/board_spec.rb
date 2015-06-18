@@ -12,11 +12,23 @@ describe Board do
 
   describe "hit" do
 
-    it "should receive a hit until one is hit" do
-      first_ship = double :ship, hit: false, position: [3, 6]
-      subject.place first_ship
-      subject.place ship
-      expect(subject.hit(1, 1)).to eq true
+  before { subject.place double :ship, hit: false, position: [3, 6] }
+
+    context "when given given coordinates fits with any ship coordinates" do
+      it "should receive a hit until one is hit" do
+
+        subject.place ship
+        expect(subject.hit(1, 1)).to eq true
+      
+      end
+    end
+
+    context "when the given coordinates do not fit with any ship coordinates" do
+      it "should return false" do
+
+        expect( subject.hit( 1,1 ) ).to eq false
+      
+      end
     end
 
   end
