@@ -6,8 +6,12 @@ class Board
 		@ships = []
 	end
 
-	def place ship 
+	def place ship
 		ships << ship
 	end
+
+  def hit x, y
+    ships.any? { |ship| ship.hit x, y }
+  end
 
 end

@@ -5,4 +5,8 @@ class Ship
     @position = [x, y]
   end
 
+  def hit
+    # return true if I am hit
+    # remember that I am hit
+  end
 end
